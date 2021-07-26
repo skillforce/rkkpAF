@@ -1,0 +1,30 @@
+.select{
+    border:2px solid black;
+    display:inline-block;
+    background-color: darkgrey;
+    padding: 5px 15px;
+    border-radius: 8px;
+    width: 110px;
+
+}
+
+.itemsAll{
+    position: absolute;
+    top:66px;
+    left:17px;
+
+}
+
+.itemsAll div{
+    border-radius: 8px;
+    border:1px solid grey;
+    background-color: navajowhite;
+    padding: 5px 42px;
+    text-align:center;
+    font-weight: 600;
+}
+
+.selected_item{
+  color:white;
+background-color: steelblue}
+

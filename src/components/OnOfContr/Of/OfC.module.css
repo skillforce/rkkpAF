@@ -1,0 +1,11 @@
+.of{
+    padding:55px;
+    border: 2px solid black;
+
+}
+
+.ofActive{
+    background-color: purple;
+    padding:55px;
+    border: 2px solid black;
+}
