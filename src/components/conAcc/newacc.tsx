@@ -1,7 +1,9 @@
-import React, {useState} from 'react';
+import React, {Dispatch, useReducer} from 'react';
 import s from './newacc.module.css';
 import {ItemsType} from '../accordion/accordion';
-import {HandlerFunction} from '@storybook/addon-actions';
+import {reducer} from './reducer';
+import state from '../../../../../samyrai-way-ts/src/Redux/state';
+
 
 const {title, btn, accordion} = s;
 
@@ -12,34 +14,41 @@ type AccordionPropsType = {
 }
 
 type AccordionTittlePropsType = {
+    dispatch: Dispatch<ActionType>
     title: string
     collaps: boolean
-    setCollaps: (collaps: boolean) => void
 }
 
 export type AccordionBodyPropsType = {
     items: ItemsType[]
-    onClick: (value: string) => void
+    onClick: (id: number) => void
+}
+
+export type ActionType = {
+    type: string
+
 }
 
 
 export function NewAccordion(props: AccordionPropsType) {
 
-    const [collaps, setCollaps] = useState(false);
+    const [state, dispatch] = useReducer(reducer, {
+        collapsed: false
+    });
 
     const {titleValue} = props;
     return (<div className={accordion}>
-        <AccordionTittle collaps={collaps} setCollaps={setCollaps} title={titleValue}/>
-        {collaps && <AccordionBodyC/>}
+        <AccordionTittle dispatch={dispatch} collaps={state.collapsed} title={titleValue}/>
+        {state.collapsed && <AccordionBodyC/>}
     </div>)
 }
 
 
 function AccordionTittle(props: AccordionTittlePropsType) {
-    const {setCollaps, collaps} = props;
+    const {collaps, dispatch} = props;
 
     const accCollapsed = () => {
-        setCollaps(!collaps)
+        dispatch({type: 'TOGGLE-COLLAPSED'})
     }
 
 
@@ -57,6 +66,7 @@ function AccordionBodyC() {
             <li>2</li>
             <li>3</li>
             <li>4</li>
+            <li>5</li>
         </ul>
     )
 }

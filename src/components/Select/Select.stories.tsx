@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import {action} from '@storybook/addon-actions';
 import {Select} from './Select';
+import {action} from '@storybook/addon-actions';
 
 
 export default {
@@ -10,11 +10,11 @@ export default {
 
 
 let itemsForSelect =[
-    {value:'1', title:'Minsk'},
-    {value:'2', title:'Mogilev'},
-    {value:'3', title:'Vitebsk'},
-    {value:'4', title:'Grodno'},
-    {value:'5', title:'Gomel'},
+    {value:1, title:'Minsk'},
+    {value:2, title:'Mogilev'},
+    {value:3, title:'Vitebsk'},
+    {value:4, title:'Grodno'},
+    {value:5, title:'Gomel'},
 ]
 
 

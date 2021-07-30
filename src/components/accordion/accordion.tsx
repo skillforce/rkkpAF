@@ -18,12 +18,12 @@ export type AccordionPropsType = {
      */
     setAccColl: (x: boolean) => void;
     items: ItemsType[]
-    onClick: (value: string) => void
+    onClick: (id:number) => void
 }
 
 export type ItemsType = {
     title: string
-    value: string
+    value: number
 }
 
 
