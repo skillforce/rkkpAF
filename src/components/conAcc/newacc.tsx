@@ -2,7 +2,6 @@ import React, {Dispatch, useReducer} from 'react';
 import s from './newacc.module.css';
 import {ItemsType} from '../accordion/accordion';
 import {reducer} from './reducer';
-import state from '../../../../../samyrai-way-ts/src/Redux/state';
 
 
 const {title, btn, accordion} = s;
